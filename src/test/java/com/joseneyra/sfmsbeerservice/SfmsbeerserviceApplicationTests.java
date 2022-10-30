@@ -9,5 +9,4 @@ class SfmsbeerserviceApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
