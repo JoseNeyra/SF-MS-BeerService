@@ -2,12 +2,14 @@ package com.joseneyra.sfmsbeerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
+import com.joseneyra.sfmsbeerservice.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -32,10 +34,15 @@ class BeerControllerTest {
 
     @Test
     void saveNewBeer() throws Exception {
-        BeerDto beerDto = BeerDto.builder().build();
+        BeerDto beerDto = BeerDto.builder()
+                .beerName("Test Beer")
+                .beerStyle(BeerStyleEnum.ALE)
+                .upc(10L)
+                .price(new BigDecimal("10.0"))
+                .build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
-        mockMvc.perform(post("/api/v1/beer/")
+        mockMvc.perform(post("/api/v1/beer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(beerDtoJson))
                 .andExpect(status().isCreated());
@@ -43,7 +50,12 @@ class BeerControllerTest {
 
     @Test
     void updateBeerById() throws Exception {
-        BeerDto beerDto = BeerDto.builder().build();
+        BeerDto beerDto = BeerDto.builder()
+                .beerName("Test Beer")
+                .beerStyle(BeerStyleEnum.ALE)
+                .upc(10L)
+                .price(new BigDecimal("10.0"))
+                .build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
