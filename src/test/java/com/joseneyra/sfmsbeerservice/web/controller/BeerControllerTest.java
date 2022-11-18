@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.joseneyra.sfmsbeerservice.bootstrap.BeerLoader;
 import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
 import com.joseneyra.sfmsbeerservice.web.model.BeerStyleEnum;
-import com.joseneyra.sfmsbeerservice.web.services.BeerServiceImpl;
+import com.joseneyra.sfmsbeerservice.services.BeerServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,7 @@
 package com.joseneyra.sfmsbeerservice.web.controller;
 
 import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
-import com.joseneyra.sfmsbeerservice.web.services.BeerServiceImpl;
-import lombok.AllArgsConstructor;
+import com.joseneyra.sfmsbeerservice.services.BeerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

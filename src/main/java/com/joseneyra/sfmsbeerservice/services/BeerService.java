@@ -1,4 +1,4 @@
-package com.joseneyra.sfmsbeerservice.web.services;
+package com.joseneyra.sfmsbeerservice.services;
 
 import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
 
