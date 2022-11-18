@@ -1,5 +1,6 @@
 package com.joseneyra.sfmsbeerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +24,11 @@ public class BeerDto {
     private Integer version;
 
     @Null
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)        // It's best practice to specify the format and send the json variable as a string
     private OffsetDateTime createdDate;             // UTC Date (best practice for WebApps is to use UTC Dates)
 
     @Null
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)        // It's best practice to specify the format and send the json variable as a string
     private OffsetDateTime lastModifiedDate;
 
     @NotBlank
@@ -36,11 +39,11 @@ public class BeerDto {
     private BeerStyleEnum beerStyle;
 
     @NotNull
-    @Positive
-    private Long upc;
+    private String upc;
 
     @NotNull
     @Positive
+    @JsonFormat(shape = JsonFormat.Shape.STRING)            // Sets the json variable as a string
     private BigDecimal price;
 
     @Positive

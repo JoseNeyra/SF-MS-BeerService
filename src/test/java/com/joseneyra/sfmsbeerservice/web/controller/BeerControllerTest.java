@@ -1,9 +1,10 @@
 package com.joseneyra.sfmsbeerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.joseneyra.sfmsbeerservice.bootstrap.BeerLoader;
 import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
 import com.joseneyra.sfmsbeerservice.web.model.BeerStyleEnum;
-import com.joseneyra.sfmsbeerservice.web.services.BeerService;
+import com.joseneyra.sfmsbeerservice.web.services.BeerServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(RestDocumentationExtension.class)
 @AutoConfigureRestDocs(uriScheme = "https", uriHost = "dev.joseneyra", uriPort = 80)    // Sets the url to display in the REST Docs
-@WebMvcTest(BeerController.class)
+@WebMvcTest( BeerController.class)          // Controller class in test
 @ComponentScan(basePackages = "com.joseneyra.sfmsbeerservice.web.mappers")
 class BeerControllerTest {
 
@@ -44,7 +45,7 @@ class BeerControllerTest {
     ObjectMapper objectMapper;
 
     @MockBean
-    BeerService beerService;
+    BeerServiceImpl beerService;
 
     @Test
     void getBeerById() throws Exception {
@@ -114,11 +115,13 @@ class BeerControllerTest {
         return BeerDto.builder()
                 .beerName("Test Beer")
                 .beerStyle(BeerStyleEnum.ALE)
-                .upc(10L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .price(new BigDecimal("10.0"))
                 .build();
     }
 
+
+    // Helper Class for Rest Docs
     private static class ConstrainedFields {
 
         private final ConstraintDescriptions constraintDescriptions;
