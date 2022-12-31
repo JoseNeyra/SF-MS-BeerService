@@ -7,9 +7,13 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BeerPagedList extends PageImpl<BeerDto> {
+public class BeerPagedList extends PageImpl<BeerDto> implements Serializable {
+
+    // Even though we're not caching the BeerPagedList is still a good practice to Serialize this object and add a serialVersionUID
+    static final long serialVersionUID = -8727299678232199882L;
 
     // Paging constructor with the help of Jackson Json that allows the communication to another service using page objects
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
