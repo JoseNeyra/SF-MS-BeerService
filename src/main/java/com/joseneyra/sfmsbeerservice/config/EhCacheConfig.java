@@ -3,7 +3,7 @@ package com.joseneyra.sfmsbeerservice.config;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;
 
-@EnableCaching
 @Configuration
-public class CacheConfig {
+@EnableCaching
+public class EhCacheConfig {
 }
