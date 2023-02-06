@@ -27,14 +27,14 @@
     </cache-template>
     <cache alias="beerCache" uses-template="default">
         <key-type>java.util.UUID</key-type>
-        <value-type>com.joseneyra.sfmsbeerservice.web.model.BeerDto</value-type>
+        <value-type>com.joseneyra.brewery.model.BeerDto</value-type>
     </cache>
     <cache alias="beerUpcCache" uses-template="default">
         <key-type>java.lang.String</key-type>
-        <value-type>com.joseneyra.sfmsbeerservice.web.model.BeerDto</value-type>
+        <value-type>com.joseneyra.brewery.model.BeerDto</value-type>
     </cache>
     <cache alias="beerListCache" uses-template="default">
         <key-type>java.lang.String</key-type>
-        <value-type>com.joseneyra.sfmsbeerservice.web.model.BeerPagedList</value-type>
+        <value-type>com.joseneyra.brewery.model.BeerPagedList</value-type>
     </cache>
 </config>

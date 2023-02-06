@@ -1,8 +1,8 @@
 package com.joseneyra.sfmsbeerservice.services;
 
-import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
-import com.joseneyra.sfmsbeerservice.web.model.BeerPagedList;
-import com.joseneyra.sfmsbeerservice.web.model.BeerStyleEnum;
+import com.joseneyra.brewery.model.BeerDto;
+import com.joseneyra.brewery.model.BeerPagedList;
+import com.joseneyra.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

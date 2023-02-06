@@ -1,9 +1,9 @@
 package com.joseneyra.sfmsbeerservice.web.controller;
 
-import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
+import com.joseneyra.brewery.model.BeerDto;
 import com.joseneyra.sfmsbeerservice.services.BeerServiceImpl;
-import com.joseneyra.sfmsbeerservice.web.model.BeerPagedList;
-import com.joseneyra.sfmsbeerservice.web.model.BeerStyleEnum;
+import com.joseneyra.brewery.model.BeerPagedList;
+import com.joseneyra.brewery.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;

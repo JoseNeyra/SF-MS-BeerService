@@ -2,7 +2,7 @@ package com.joseneyra.sfmsbeerservice.web.mappers;
 
 import com.joseneyra.sfmsbeerservice.domain.Beer;
 import com.joseneyra.sfmsbeerservice.services.inventory.BeerInventoryService;
-import com.joseneyra.sfmsbeerservice.web.model.BeerDto;
+import com.joseneyra.brewery.model.BeerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BeerMapperDecorator implements BeerMapper{

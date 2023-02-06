@@ -1,4 +1,4 @@
-package com.joseneyra.sfmsbeerservice.web.model;
+package com.joseneyra.brewery.model;
 
 public enum BeerStyleEnum {
 
