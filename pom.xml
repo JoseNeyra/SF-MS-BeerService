@@ -26,7 +26,6 @@
 			<artifactId>saaj-impl</artifactId>
 			<version>1.5.1</version>
 		</dependency>
-		<!-- Jaxb End -->
 
 		<!-- Caching -->
 		<dependency>
