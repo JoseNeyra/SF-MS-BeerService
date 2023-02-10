@@ -15,6 +15,8 @@ public class JmsConfig {
     // The queue name can also be stored in the properties file.
     public static final String BREWING_REQUEST_QUEUE = "brewing-request";
     public static final String NEW_INVENTORY_QUEUE = "new-inventory";
+    public static final String VALIDATE_ORDER_QUEUE = "validate-order";
+    public static final String VALIDATE_ORDER_RESPONSE_QUEUE = "validate-order-response";
 
     // Need to pass in the Spring Managed object mapper for proper mapping of all the fields of the objects
     @Bean   // Allows Jackson to Serialize message content to json using TextMessage

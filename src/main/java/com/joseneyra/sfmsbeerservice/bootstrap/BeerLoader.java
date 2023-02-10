@@ -4,14 +4,12 @@ import com.joseneyra.sfmsbeerservice.domain.Beer;
 import com.joseneyra.sfmsbeerservice.repositories.BeerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 // No longer need this class because were initializing the data using the data.sql file in resources
 // and also setting the  spring.datasource.initialization-mode property to EMBEDDED in the properties file.
-@Component
+//@Component
 @RequiredArgsConstructor
 public class BeerLoader implements CommandLineRunner {
 
