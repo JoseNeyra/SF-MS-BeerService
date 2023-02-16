@@ -15,6 +15,9 @@ public class BeerOrderValidationListener {
     private final BeerOrderValidator validator;
     private final JmsTemplate jmsTemplate;
 
+
+    // Receives an order from the Beer Order Service, validates it and sends response to the
+    // VALIDATE_ORDER_RESPONSE_QUEUE
     @JmsListener(destination = JmsConfig.VALIDATE_ORDER_QUEUE)
     public void listen(ValidateBeerOrderRequest validateBeerOrderRequest) {
 
