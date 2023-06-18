@@ -17,6 +17,8 @@
 	<properties>
 		<asciidoctor-maven-plugin.version>2.2.2</asciidoctor-maven-plugin.version>
 		<maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+		<openfeign.version>4.0.1</openfeign.version>
+		<eureka-client.version>4.0.0</eureka-client.version>
 	</properties>
 
 	<dependencies>
@@ -40,6 +42,16 @@
 			<groupId>org.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 			<version>3.7.1</version>
+		</dependency>
+
+		<!-- Eureka Service -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
 		<!-- Tests -->

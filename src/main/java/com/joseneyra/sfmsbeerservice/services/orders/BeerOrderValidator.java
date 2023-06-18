@@ -18,6 +18,7 @@ public class BeerOrderValidator {
     // Checks the BeerOrderDto for any beerUpc that is not listed in the repository
     // Returns true if validation passed, false otherwise
     public Boolean validateOrder(BeerOrderDto beerOrderDto) {
+        log.info("validateOrder() - Started for beerOrderDto: {}", beerOrderDto.getId());
         AtomicInteger beersNotFound = new AtomicInteger();
 
         beerOrderDto.getBeerOrderLines().forEach(orderline -> {
@@ -26,6 +27,7 @@ public class BeerOrderValidator {
             }
         });
 
+        log.debug("Total Beer Orders Not Found = {}", beersNotFound.get());
         return beersNotFound.get() == 0;
     }
 }

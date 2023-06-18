@@ -1,30 +1,21 @@
 package com.joseneyra.sfmsbeerservice.services.inventory;
 
-import com.joseneyra.sfmsbeerservice.bootstrap.BeerLoader;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-@Disabled       // Utility for manual testing
-@SpringBootTest
-class BeerInventoryServiceRestTemplateImplTest {
-
-    @Autowired
-    BeerInventoryService beerInventoryService;
-
-    @BeforeEach
-    void setUp() {
-    }
-
-    @Test
-    void getOnHandInventory() {
-        //todo: evolve to use UPC
-//        Integer qoh = beerInventoryService.getOnHandInventory(BeerLoader.BEER_1_UUID);
+//@Disabled       // Utility for manual testing
+//@SpringBootTest
+//class BeerInventoryServiceRestTemplateImplTest {
 //
-//        System.out.println(qoh);
-    }
-}
+//    @Autowired
+//    BeerInventoryService beerInventoryService;
+//
+//    @BeforeEach
+//    void setUp() {
+//    }
+//
+//    @Test
+//    void getOnHandInventory() {
+//        //todo: evolve to use UPC
+////        Integer qoh = beerInventoryService.getOnHandInventory(BeerLoader.BEER_1_UUID);
+////
+////        System.out.println(qoh);
+//    }
+//}

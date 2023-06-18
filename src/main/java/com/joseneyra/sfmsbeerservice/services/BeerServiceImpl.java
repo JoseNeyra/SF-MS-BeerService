@@ -1,14 +1,13 @@
 package com.joseneyra.sfmsbeerservice.services;
 
+import com.joseneyra.brewery.model.BeerDto;
+import com.joseneyra.brewery.model.BeerPagedList;
+import com.joseneyra.brewery.model.BeerStyleEnum;
 import com.joseneyra.sfmsbeerservice.domain.Beer;
 import com.joseneyra.sfmsbeerservice.repositories.BeerRepository;
 import com.joseneyra.sfmsbeerservice.web.controller.exceptions.NotFoundException;
 import com.joseneyra.sfmsbeerservice.web.mappers.BeerMapper;
-import com.joseneyra.brewery.model.BeerDto;
-import com.joseneyra.brewery.model.BeerPagedList;
-import com.joseneyra.brewery.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class BeerServiceImpl implements BeerService{
     private final BeerMapper beerMapper;
 
 
-    @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false")      // The cache is having a specific key so spring doesn't have to create a key
+     // The cache is having a specific key so spring doesn't have to create a key
     @Override
     public BeerDto getById(UUID beerId, Boolean showInventoryOnHand) {
         // This example returns null
@@ -48,7 +47,6 @@ public class BeerServiceImpl implements BeerService{
         }
     }
 
-    @Cacheable(cacheNames = "beerUpcCache")
     @Override
     public BeerDto getByUpc(String upc) {
         return beerMapper.beerToBeerDto(beerRepository.findByUpc(upc));
@@ -73,8 +71,7 @@ public class BeerServiceImpl implements BeerService{
         return beerMapper.beerToBeerDto(beerRepository.save(beer));
     }
 
-
-    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")       // Only cache this value when showInventoryOnHand == false , spring is going to generate a key based on the parameters
+    // Only cache this value when showInventoryOnHand == false , spring is going to generate a key based on the parameters
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand) {
 
